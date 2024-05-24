@@ -78,6 +78,10 @@ public class C04_SifreKontrolu {
         }
 
 
+        // yukarda hata durumlarini kontrol edip hata varsa yazdirdik
+        // sifrenin basarili olmasi tum kontrollerin birlikte yapilmasini gerektirdiginden
+        // ayrica yapilmalidir
+
         if (kucukHarfIceriyor == true  &&
             buyukHarfIceriyor == true  &&
             sayiIceriyor==true &&
