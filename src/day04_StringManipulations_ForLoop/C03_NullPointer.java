@@ -6,11 +6,16 @@ public class C03_NullPointer {
     public static void main(String[] args) {
 
         /*
-            Null Pointer : bir deger degil ISARETCIDIR
+            1- Null Pointer : bir deger degil ISARETCIDIR
 
-            b ve c deger atanmayan variable'lardir
-            java deger atanmayan b'yi kullanmaniza HIC BIR SEKILDE izin vermez
-            ama null olarak ISARETLENEN variable'lari SADECE yazdirmamiza izin verir
+            2- Null Pointer, deger atamak istemedigimiz variable'lari isaretlemek icin kullanilir
+                        b ve c deger atanmayan variable'lardir
+                        java deger atanmayan b'yi kullanmaniza HIC BIR SEKILDE izin vermez
+                        b'yi kullanmak isterseniz CTE olusur
+                        sadece kullanilan class degil projenin hic bir class'i calistirilamaz
+                        null olarak isaretlenen variable kodun CALISMASINA ENGEL OLMAZ
+            3- Null olarak isaretlenen bir variable YAZDIRILABILIR,
+               ama baska hicbir method ile KULLANILAMAZ
 
          */
 
@@ -30,16 +35,21 @@ public class C03_NullPointer {
                                         // degeri olmayan bir variable KULLANILAMAZ
                 System.out.println(c);  // null yazdirir
 
-        //        System.out.println(a + d);
-        //
-        //        System.out.println(b + d);
-        //
-        //        System.out.println(c + d);
-        //
-        //        System.out.println(a.length());
-        //
-        //        System.out.println(b.length());
-        //
-        //        System.out.println(c.length());
+                System.out.println(a + d); // ""+"Tava" ==> Tava
+
+                // System.out.println(b + d);// Compile Time Error
+                                             // degeri olmayan bir variable KULLANILAMAZ
+
+                System.out.println(c + d); // null + "Tava" ==> nullTava
+
+                System.out.println(a.length()); // "".lengt() ==> 0
+                                                // length() ==> kullanilan karakter sayisi
+
+                //System.out.println(b.length()); // Compile Time Error
+                                                // degeri olmayan bir variable KULLANILAMAZ
+
+                System.out.println(c.length()); // RunTime'da yani calistirinca
+                                                // NullPointerException
+
     }
 }
