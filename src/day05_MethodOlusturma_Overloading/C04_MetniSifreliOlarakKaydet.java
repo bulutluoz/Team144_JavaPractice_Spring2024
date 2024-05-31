@@ -1,29 +1,42 @@
 package day05_MethodOlusturma_Overloading;
 
-public class C03_SifreliYazdirma {
+import java.util.Scanner;
+
+public class C04_MetniSifreliOlarakKaydet {
 
     public static void main(String[] args) {
-
         // Verilen bir cumleyi sifrelememiz isteniyor.
         // Metni sifrelemek icin her harf kucuk harfe cevrilecek
         // ve kendisinden 5 sonraki harfle degistirilecektir (a->f, b->g… gibi),
         // eger 5 harf sayarken z’ye gelindiyse basa a harfine donulecektir. (u->z, w->a, x->b.. gibi),
         // harf disinda sayi, ozel karakter varsa onlar degistirilmeyecektir.
 
-        //Parametre olarak aldigi cumleyi, sifreli olarak yazdiran bir method olusturun.
+        // Kullanicidan bir metin isteyin, aldiginiz metni sifreli hale cevirip
+        // o haliyle kaydedin
 
-        String metin = "Java Candir1.";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Lutfen bir metin giriniz...");
+        String metin = scanner.nextLine();
 
-        sifreliYazdir("uvwxyz"); // zabcde
+        // C03_SifreliYazdirma.sifreliYazdir(metin);
 
-        sifreliYazdir(metin); // ofaf hfsinw1.
+        // Bir method void ise urettigi sonucu baska bir class'da KAYDETME sansimiz olmaz
+        // BU sebeple GENELDE return kullanan method'lar tercih edilir
 
+        // method calisip sifreli halini bize getirir
+        // EGER sadece YAZDIRMAK istiyorsak, kod dunyasinda gelen sonucu yazdirmaliyiz
+        // System.out.println(sifreliMetniDondur(metin)); // ofaf
 
+        // EGER method'un sonucuyla bir islem yapmamiz isteniyorsa
+        // kod dunyasinda istenen islemi yapmaliyiz
 
+        metin = sifreliMetniDondur(metin);
+
+        System.out.println( "Girilen metnin son hali : " + metin);
     }
 
-
-    public static void sifreliYazdir( String metin ){
+    // metni sifreleyip, sifreli halini kod dunyasina donduren bir method olusturalim
+    public static String sifreliMetniDondur(  String metin ){
 
         // Metni sifrelemek icin her harf kucuk harfe cevrilecek
         metin = metin.toLowerCase();
@@ -52,9 +65,7 @@ public class C03_SifreliYazdirma {
 
         }
 
-        System.out.println(sifreliMetin);
-
+        return sifreliMetin;
     }
-
 
 }
