@@ -1,4 +1,4 @@
-package day06_MethodOlusturma_Overloading;
+package day05_MethodOlusturma_Overloading;
 
 public class C06_MethodOverloading {
 
@@ -16,6 +16,7 @@ public class C06_MethodOverloading {
         islem(4.1,5.2f);
         islem(4.1,5.2);2
          */
+
     }
 
 
