@@ -46,8 +46,6 @@ public class C05_SifreKontrolu {
         }
     }
 
-
-
     public static boolean sifreGecerliMi(String girilenSifre){
 
 
