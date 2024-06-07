@@ -26,6 +26,9 @@ public class C06_MethodOverloading {
         argument == parametre eslesmesine gore karar verir
 
         - Eger %100 uyumlu method varsa onu kullanir
+        - %100 uyumlu yoksa, casting ile calistirabilecegi method varsa onu kullanir
+        - Eger casting ile calistirabilecegi birden fazla method varsa
+          EN AZ casting ile calistiracagini tercih eder
 
      */
 
@@ -42,15 +45,6 @@ public class C06_MethodOverloading {
 
         // Asagidaki kod calistiginda konsolda neler yazdirir?
 
-        /*
-
-        islem(4,5);
-        islem(4.4,5);
-        islem(4,5.5f);
-        islem(4,5.5);
-        islem(4.1,5.2f);
-        islem(4.1,5.2);2
-         */
 
         islem(5); // argument 5 / argumentin data turu int
         // method 1 calisir ve 10 yazdirir
@@ -62,6 +56,33 @@ public class C06_MethodOverloading {
         // 1 tane float parametresi olan method var mi ?  YOK
         // casting ile kullanabilecegim bir method var mi ? method3 4.3 yazdirir
 
+        islem(4,5); // islem int int
+        // method5 calisir 9 yazdirir
+
+        islem(4.4,5); // islem double int
+        // method 4 calisir 1.4 yazdirir
+
+        islem(4,5.5f); // islem int float %100 uyumlu yok
+        // casting ile calistirabilecegimiz var mi ?
+        // method6 calisir ve 4.0 yazdirir
+
+        // islem(4,5.5); // islem int double %100 uyumlu yok
+        // casting ile calistirabilecegimiz var mi ? YOK
+        // CTE verir
+
+        islem(4.1,5.2f); // islem double float 6.method ==> 4.1
+
+        // islem(4.1,5.2); // islem double double
+        // %100 uyumlu yok
+        // casting ile calistirilabilecek yok
+        // CTE
+
+        short c = 3;
+        islem(5,3); // islem int short
+        // %100 uyumlu yok
+        // casting ile calistirilabilecek var mi ?  4,5 ve 6 casting ile calisir
+        // EGER casting ile calistiran birden fazla method varsa,
+        // Java en az casting yapacagini tercih eder method 5 calisir 8 yazdirir
 
     }
 
