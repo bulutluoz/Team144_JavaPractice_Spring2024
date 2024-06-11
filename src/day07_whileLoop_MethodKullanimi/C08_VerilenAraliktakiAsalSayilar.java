@@ -17,15 +17,19 @@ public class C08_VerilenAraliktakiAsalSayilar {
 
         System.out.println("Bitis olarak pozitif bir tamsayi giriniz...");
         int bitis = scanner.nextInt();
+        int sayac = 0;
+
 
         while ( baslangic <= bitis){
 
             if (C07_AsalMiMethodu.asalMi(baslangic)){
                 System.out.print( baslangic + " ");
+                sayac++;
             }
 
             baslangic++;
         }
 
+        System.out.println("\nToplam " + sayac + " adet asal sayi bulundu");
     }
 }
