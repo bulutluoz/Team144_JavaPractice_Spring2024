@@ -16,7 +16,7 @@ public class C11_WhileLoopIleCozum {
         int sayi = 6;
         boolean sonuc  = false;
 
-        while ( sonuc == false ){
+        while (!sonuc){ // sonuc == false
 
             System.out.println("Lutfen bir asal sayi giriniz...");
             sayi = scanner.nextInt();
